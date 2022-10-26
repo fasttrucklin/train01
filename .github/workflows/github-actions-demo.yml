@@ -19,7 +19,7 @@ jobs:
       - name: branch + event
         run: |
           echo "${{ github.event_name }}"
-          echo "${{ github.event.type }}"
+          echo "${{ github.event.type.name }}"
           echo "${{ github.ref_name }}"
       - uses: actions/checkout@v3.0.2
       - name: list repos
