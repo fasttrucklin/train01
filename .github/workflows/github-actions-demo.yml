@@ -21,4 +21,4 @@ jobs:
           echo "${{ github.event.type }}"
           echo "${{ github.ref_name }}"
       - name: list repos
-        run: ls -alH *
+        run: ls -alH
