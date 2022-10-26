@@ -1,0 +1,24 @@
+name: GitHub Action Demo
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths-ignore: .github
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    cron: 15 06 * * 7
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: branch + event
+        run: |
+          echo "${{ github.event.type }}"
+          echo "${{ github.ref_name }}"
+      - name: list repos
+        run: ls -alH *
