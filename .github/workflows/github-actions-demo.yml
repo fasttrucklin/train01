@@ -16,10 +16,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: contexts runner
+        run: echo "${{ toJSON(runner) }}"
+      - name: contexts github
+        run: echo "${{ toJSON(github) }}"
+      - name: contexts env
+        run: echo "${{ toJSON(env) }}"
+      - name: contexts matrix
+        run: echo "${{ toJSON(matrix) }}"
+
       - name: branch + event
         run: |
           echo "${{ github.event_name }}"
-          echo "${{ github.event.type.name }}"
           echo "${{ github.ref_name }}"
       - uses: actions/checkout@v3.0.2
       - name: list repos
