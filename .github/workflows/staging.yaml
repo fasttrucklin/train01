@@ -7,7 +7,7 @@ on:
         type: environment
         required: true 
 
-
+jobs:
   Build:
     name: build
     runs-on: ubuntu-latest
