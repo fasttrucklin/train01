@@ -10,6 +10,9 @@ on:
 
   Build:
     name: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo hihi
 
   Test:
     runs-on: ubuntu-latest
