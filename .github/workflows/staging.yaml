@@ -1,4 +1,5 @@
 name: Test Staging
+on:
   workflow_dispatch:
     inputs:
       environment:
