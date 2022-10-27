@@ -3,14 +3,19 @@ name: GitHub Action Demo
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-    paths-ignore: .github
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: "15 06 * * 0"
+#  push:
+#    branches: [ "main" ]
+#    paths-ignore: .github
+#  pull_request:
+#    branches: [ "main" ]
+#  schedule:
+#    - cron: "15 06 * * 0"
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        required: true 
 
 jobs:
   build:
